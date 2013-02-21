@@ -1,0 +1,34 @@
+petrae_fichier_plante_success:
+    pattern:  /success
+    defaults: { _controller: "PetraeFichierPlanteBundle:FichierPlante:index" }
+
+plante:
+    pattern:  /plantes
+    defaults: { _controller: "PetraeFichierPlanteBundle:Plante:index" }
+
+plante_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "PetraeFichierPlanteBundle:Plante:show" }
+
+plante_new:
+    pattern:  /new
+    defaults: { _controller: "PetraeFichierPlanteBundle:Plante:new" }
+
+plante_create:
+    pattern:  /create
+    defaults: { _controller: "PetraeFichierPlanteBundle:Plante:create" }
+    requirements: { _method: post }
+
+plante_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "PetraeFichierPlanteBundle:Plante:edit" }
+
+plante_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "PetraeFichierPlanteBundle:Plante:update" }
+    requirements: { _method: post }
+
+plante_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "PetraeFichierPlanteBundle:Plante:delete" }
+    requirements: { _method: post }

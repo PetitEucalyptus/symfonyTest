@@ -1,0 +1,24 @@
+{% extends "PetraeFichierPlanteBundle::layout.html.twig" %}
+
+
+{% block title %}
+    Accueil - {{ parent() }}
+{% endblock %}
+
+{% block body %}
+    <h2>Plante creation</h2>
+    <form action="{{ path('plante_create') }}" method="post" {{ form_enctype(form) }}>
+        {{ form_widget(form) }}
+        <p>
+            <button type="submit">Create</button>
+        </p>
+    </form>
+
+    <ul class="record_actions">
+        <li>
+            <a href="{{ path('plante') }}">
+                Back to the list
+            </a>
+        </li>
+    </ul>
+{% endblock %}

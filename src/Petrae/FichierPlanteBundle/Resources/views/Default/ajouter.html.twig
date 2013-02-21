@@ -1,0 +1,22 @@
+{% extends "PetraeFichierPlanteBundle::layout.html.twig" %}
+
+{% block title %}
+    Accueil - {{ parent() }}
+{% endblock %}
+
+{% block body %}
+
+    <h2>{{ SousTitre }}</h2>
+
+    <form action="{{ path('petrae_fichier_plante_ajouter') }}" method="post" {{ form_enctype(form) }}>
+        {{ form_errors(form) }}
+
+        {{ form_row(form.NomLatin) }}
+        {{ form_row(form.NomFrancais) }}
+
+        {{  form_rest(form) }}
+
+        <input type="submit" value="Ajouter Plante"/>
+    </form>
+
+{% endblock %}

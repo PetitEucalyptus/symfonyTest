@@ -1,0 +1,8 @@
+Petrae\FichierPlanteBundle\Entity\Plante:
+    properties:
+        NomLatin:
+            - NotBlank: ~
+        NomFrancais:
+            - NotBlank: ~
+        Description:
+            - NotBlank: ~

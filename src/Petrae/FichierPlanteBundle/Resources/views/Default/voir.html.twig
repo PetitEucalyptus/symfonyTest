@@ -1,0 +1,23 @@
+{% extends "PetraeFichierPlanteBundle::layout.html.twig" %}
+
+{% block  title %}
+    Fiche: {{ plante.NomLatin }}
+{% endblock %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="/css/modifier_plante.css" type="text/css"/>
+{% endblock %}
+
+{% block body %}
+    <h2> {{ plante.NomLatin }}  <a class="btn btn-primary modifier"
+                                   href="{{ path('petrae_fichier_plante_modifier', {'id': plante.id}) }}">
+        Modifier</a></h2>
+    <ul>
+        <li>
+            <b>Nom Français:</b> {{ plante.NomFrancais }}
+        </li>
+        <li>
+            <b>Description:</b> {{ plante.Description }}
+        </li>
+    </ul>
+{% endblock %}

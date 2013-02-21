@@ -1,0 +1,7 @@
+parameters:
+#    petrae_fichier_plante.example.class: Petrae\FichierPlanteBundle\Example
+
+services:
+#    petrae_fichier_plante.example:
+#        class: %petrae_fichier_plante.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

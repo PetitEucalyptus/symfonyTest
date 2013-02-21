@@ -1,0 +1,22 @@
+{% extends "PetraeFichierPlanteBundle::layout.html.twig" %}
+ 
+{% block title %}
+  Accueil - {{ parent() }}
+{% endblock %}
+ 
+{% block body %}
+ 
+  <h2>Liste des plantes</h2>
+ 
+  <ul>
+    {% for plante in plantes %}
+     <li>
+        <a href="{{ path('petrae_fichier_plante_voir', {'id': plante.id}) }}">{{ plante.NomLatin }}</a>
+        ou {{ plante.NomFrancais}},
+      </li>
+    {% else %}
+      <li>Pas (encore !) de plantes</li>
+    {% endfor %}
+  </ul>
+ 
+{% endblock %}

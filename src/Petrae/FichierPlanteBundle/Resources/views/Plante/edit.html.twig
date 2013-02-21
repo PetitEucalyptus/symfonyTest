@@ -1,0 +1,22 @@
+{% extends "PetraeFichierPlanteBundle::layout.html.twig" %}
+
+{% block title %}
+    Accueil - {{ parent() }}
+{% endblock %}
+
+{% block body %}
+
+    <h2>Editer {{ plante.NomLatin }}</h2>
+
+    <form action="{{ path('plante_update', {'id': plante.id}) }}" method="post" {{ form_enctype(edit_form) }}>
+        {{ form_errors(edit_form) }}
+
+        {{ form_row(edit_form.NomLatin) }}
+        {{ form_row(edit_form.NomFrancais) }}
+
+        {{  form_rest(edit_form) }}
+
+        <input type="submit" value="Modifier Plante"/>
+    </form>
+
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends "PetraeFichierPlanteBundle::layout.html.twig" %}
+
+
+{% block  title %}
+    Fiche: {{ plante.NomLatin }}
+{% endblock %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="/css/modifier_plante.css" type="text/css"/>
+{% endblock %}
+
+{% block body %}
+    <h2> {{ plante.NomLatin }} </h2>
+    <div>
+        <a class="btn btn-primary modifier"
+           href="{{ path('plante_edit', {'id': plante.id}) }}">
+            Modifier</a>
+
+        <form action="{{ path('plante_delete', {'id': plante.id}) }}" method="Post">
+            <input type="submit" value="Supprimer" class="btn btn-danger modifier"
+                   href="{{ path('plante_delete', {'id': plante.id}) }} "/>
+        </form>
+    </div>
+    <ul>
+        <li>
+            <b>Nom Français:</b> {{ plante.NomFrancais }}
+        </li>
+        <li>
+            <b>Description:</b> {{ plante.Description }}
+        </li>
+    </ul>
+{% endblock %}
+
